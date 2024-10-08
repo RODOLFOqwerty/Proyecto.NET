@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Consola\\SGI.Consola.csproj": {}
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Consola\\SGI.Consola.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
         "projectName": "SGI.Aplicacion",
-        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
+        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
         "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\obj\\",
+        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Consola\\SGI.Consola.csproj": {
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Consola\\SGI.Consola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Consola\\SGI.Consola.csproj",
+        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Consola\\SGI.Consola.csproj",
         "projectName": "SGI.Consola",
-        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Consola\\SGI.Consola.csproj",
+        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Consola\\SGI.Consola.csproj",
         "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Consola\\obj\\",
+        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Consola\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,11 +88,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
-                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj"
+              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
+                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj"
               },
-              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj": {
-                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj"
+              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj": {
+                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj"
               }
             }
           }
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj": {
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj",
+        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj",
         "projectName": "SGI.Repositorio",
-        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj",
+        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\SGI.Repositorio.csproj",
         "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Repositorio\\obj\\",
+        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Repositorio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -155,8 +155,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
-                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\VersionLozi\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj"
+              "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
+                "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj"
               }
             }
           }
