@@ -6,6 +6,6 @@ Todo lo ultimo modificado:
 -Se agregaron los casos de uso
 -Se cambio el test del program
 -Se arreglo el error por null(revisar)
+-Se arreglo los casos de uso(AC,AT,BC,BP,BT)
 
 Cosas a tomar en cuenta:
--Los repositorios pueden dar null y eso hay que corregirlo

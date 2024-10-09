@@ -7,7 +7,7 @@ public class Transaccion {
     public int cantidad { get; set; }
     public TipoTransaccion tipotransaccion { get; set; } 
     public DateTime fechatransaccion { get; set; }
-    public TipoTransaccion tipo { get; set; }
+   
     
     public Transaccion(int productoid,int cantidad, TipoTransaccion tipotransaccion){
         this.productoid = productoid;

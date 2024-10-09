@@ -29,10 +29,30 @@ namespace SGI.Aplicacion.CasosdeUso
             {
                 throw new PermisosException("El usuario no tiene permisos para dar de alta transacciones.");
             }
-
-            var producto = _repositorioProducto.ObtenerPorId(transaccion.productoid);
-            _validador.Validar(transaccion, producto);
-            _repositorio.Agregar(transaccion);
+            if(transaccion.tipotransaccion == TipoTransaccion.Entrada){
+                Producto p = _repositorioProducto.ObtenerPorId(transaccion.productoid);
+                if(p!=null){
+                    _repositorioProducto.Eliminar(transaccion.productoid);
+                    p.fechaUM = DateTime.Now;
+                    p.stock += transaccion.cantidad;
+                    _repositorioProducto.Agregar(p);
+                    _repositorio.Agregar(transaccion);
+                }else{
+                    throw new ValidacionException($"El producto con id {transaccion.productoid} no fue encontrado");
+                }
+            }else if(transaccion.tipotransaccion == TipoTransaccion.Salida){
+                Producto p = _repositorioProducto.ObtenerPorId(transaccion.productoid);
+                if(p!=null){
+                    _repositorioProducto.Eliminar(transaccion.productoid);
+                    p.fechaUM = DateTime.Now;
+                    p.stock -= transaccion.cantidad;
+                    _repositorioProducto.Agregar(p);
+                    _repositorio.Agregar(transaccion);
+                }else{
+                    throw new ValidacionException($"El producto con id {transaccion.productoid} no fue encontrado");
+                }
+            }
+            
         }
 
     }

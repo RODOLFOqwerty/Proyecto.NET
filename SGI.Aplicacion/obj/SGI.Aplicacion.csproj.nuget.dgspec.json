@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {}
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version_Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
+    "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version_Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version_Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
         "projectName": "SGI.Aplicacion",
-        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
+        "projectPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version_Final\\SGI\\SGI.Aplicacion\\SGI.Aplicacion.csproj",
         "packagesPath": "C:\\Users\\Fran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version Final\\SGI\\SGI.Aplicacion\\obj\\",
+        "outputPath": "C:\\Users\\Fran\\OneDrive\\Documentos\\Facultad\\2año\\.NET\\ProyectoNET\\Version_Final\\SGI\\SGI.Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fran\\AppData\\Roaming\\NuGet\\NuGet.Config",

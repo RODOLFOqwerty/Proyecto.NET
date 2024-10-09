@@ -1,4 +1,0 @@
-1,COCA,Descripcin random,100,1,10/6/2024 12:00:00 AM,10/6/2024 12:00:00 AM,0
-2,COCA,Descripcin random,100,1,10/6/2024 12:00:00 AM,10/6/2024 12:00:00 AM,0
-3,Producto Ejemplo xd,Descripción del producto,10,100,10/8/2024 2:32:26 PM,10/8/2024 2:32:26 PM,1
-4,Producto Ejemplo xd,Descripción del producto,10,100,10/8/2024 4:05:11 PM,10/8/2024 4:05:11 PM,1

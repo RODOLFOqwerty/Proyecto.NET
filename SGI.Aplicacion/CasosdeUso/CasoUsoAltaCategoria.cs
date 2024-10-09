@@ -7,13 +7,13 @@ namespace SGI.Aplicacion.CasosdeUso
     public class CasoUsoAltaCategoria
     {
         private readonly IRepositorio<Categoria> _repositorio;
-
+        
         public CasoUsoAltaCategoria(IRepositorio<Categoria> repositorio)
         {
             _repositorio = repositorio;
         }
 
-    public void Ejecutar(Categoria categoria, Usuario usuario, IServicioAutorizacion servicioAutorizacion)
+    public void Ejecutar(Categoria categoria, Usuario usuario)
     {
         if (!usuario.PoseePermiso(Permiso.CategoriaAlta))
         {
