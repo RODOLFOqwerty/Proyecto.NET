@@ -7,7 +7,7 @@ namespace SGI.Aplicacion.CasosdeUso
     public class CasoUsoAltaCategoria
     {
         private readonly IRepositorio<Categoria> _repositorio;
-        
+        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
         public CasoUsoAltaCategoria(IRepositorio<Categoria> repositorio)
         {
             _repositorio = repositorio;
@@ -15,12 +15,11 @@ namespace SGI.Aplicacion.CasosdeUso
 
     public void Ejecutar(Categoria categoria, Usuario usuario)
     {
-        if (!usuario.PoseePermiso(Permiso.CategoriaAlta))
-        {
-            throw new PermisosException("El usuario no tiene permisos para dar de alta categorías.");
-        }
+        _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
 
         var validador = new CategoriaValidador();
+
+        categoria.id = _repositorio.ObtenerNuevoId();        
         validador.Validar(categoria); // Validar la categoría antes de agregar
 
         _repositorio.Agregar(categoria); // Agregar la categoría al repositorio

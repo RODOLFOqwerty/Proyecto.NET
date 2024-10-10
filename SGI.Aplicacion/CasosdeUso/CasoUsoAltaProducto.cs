@@ -1,28 +1,24 @@
 using SGI.Aplicacion.Interfaces;
 using SGI.Aplicacion.Entidades;
+using SGI.Aplicacion.Validaciones;
 namespace SGI.Aplicacion.CasosdeUso
 
 {
     public class CasoUsoAltaProducto
     {
         private readonly IRepositorio<Producto> _repositorio;
-        private readonly IValidacion<Producto> _validador;
-        private readonly IServicioAutorizacion _servicioAutorizacion;
+        private readonly IValidacion<Producto> _validador = new ProductoValidacion();
+        private readonly IServicioAutorizacion _servicioAutorizacion = new ServicioAutorizacion();
 
-        public CasoUsoAltaProducto(IRepositorio<Producto> repositorio, IValidacion<Producto> validador, IServicioAutorizacion servicioAutorizacion)
+        public CasoUsoAltaProducto(IRepositorio<Producto> repositorio)
         {
             _repositorio = repositorio;
-            _validador = validador;
-            _servicioAutorizacion = servicioAutorizacion;
         }
 
         public void Ejecutar(Producto producto, Usuario usuario)
         {
-            if (!usuario.PoseePermiso(Permiso.ProductoAlta))
-            {
-                throw new PermisosException("El usuario no tiene permisos para dar de alta productos.");
-            }
-
+            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+            producto.id = _repositorio.ObtenerNuevoId();
             _validador.Validar(producto);
             _repositorio.Agregar(producto);
         }

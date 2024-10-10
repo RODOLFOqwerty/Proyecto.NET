@@ -1,27 +1,23 @@
 using SGI.Aplicacion.Interfaces;
 using SGI.Aplicacion.Entidades;
+using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
     public class CasoUsoModificarProducto
     {
         private readonly IRepositorio<Producto> _repositorio;
-        private readonly IValidacion<Producto> _validador;
-        private readonly IServicioAutorizacion _servicioAutorizacion;
+        private readonly IValidacion<Producto> _validador = new ProductoValidacion();
+        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
 
-        public CasoUsoModificarProducto(IRepositorio<Producto> repositorio, IValidacion<Producto> validador, IServicioAutorizacion servicioAutorizacion)
+        public CasoUsoModificarProducto(IRepositorio<Producto> repositorio)
         {
             _repositorio = repositorio;
-            _validador = validador;
-            _servicioAutorizacion = servicioAutorizacion;
         }
 
-        public void Ejecutar(Producto producto, int idUsuario)
+        public void Ejecutar(Producto producto, Usuario usuario)
         {
-            if (!_servicioAutorizacion.PoseeElPermiso(idUsuario, Permiso.ProductoModificacion))
-            {
-                throw new PermisosException("El usuario no tiene permisos para modificar productos.");
-            }
+            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaModificacion);
 
             _validador.Validar(producto);
             _repositorio.Eliminar(producto.id);

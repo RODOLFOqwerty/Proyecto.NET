@@ -7,21 +7,18 @@ namespace SGI.Aplicacion.CasosdeUso
     {
         private readonly IRepositorio<Categoria> _repositorio;
         private readonly IRepositorio<Producto> _repositorioProducto;
-        private readonly IServicioAutorizacion _servicioAutorizacion;
+        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
 
-        public CasoUsoBajaCategoria(IRepositorio<Categoria> repositorio, IServicioAutorizacion servicioAutorizacion, IRepositorio<Producto> repositorioP)
+        public CasoUsoBajaCategoria(IRepositorio<Categoria> repositorio, IRepositorio<Producto> repositorioP)
         {
             _repositorio = repositorio;
-            _servicioAutorizacion = servicioAutorizacion;
             _repositorioProducto = repositorioP;
         }
 
-        public void Ejecutar(int id, int idUsuario)
+        public void Ejecutar(int id, Usuario usuario)
         {
-            if (!_servicioAutorizacion.PoseeElPermiso(idUsuario, SGI.Aplicacion.Entidades.Permiso.CategoriaBaja))
-            {
-                throw new PermisosException("El usuario no tiene permisos para dar de baja categorías.");
-            }
+            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+           
 
             
             // Lógica para verificar si la categoría tiene productos asignados
@@ -29,7 +26,8 @@ namespace SGI.Aplicacion.CasosdeUso
             if(!lista.Any(p => p.categoriaId == id)){
                 _repositorio.Eliminar(id);
             }else{
-                throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
+                //throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
+                Console.WriteLine("ERROR");
             }
         }
     }

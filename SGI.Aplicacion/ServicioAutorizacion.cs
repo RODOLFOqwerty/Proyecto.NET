@@ -8,7 +8,7 @@ public class ServicioAutorizacion:IServicioAutorizacion
         if(IdUsuario == 1){
             return true;
         }else{
-            return false;
+            throw new PermisosException("No pose el permiso adecuado");
         }
     }
 }

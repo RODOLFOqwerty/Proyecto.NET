@@ -1,24 +1,28 @@
 using SGI.Aplicacion;
 using SGI.Aplicacion.Entidades;
+using SGI.Aplicacion.Interfaces;
 
 namespace SGI;
 
-public class Repositorio_Transaccion
+public class Repositorio_Transaccion:IRepositorio<Transaccion>
 {
        private readonly string filePath = "transacciones.txt";
 
     public void Agregar(Transaccion transaccion)
     {
-        transaccion.id = ObtenerNuevoId();
-        var linea = $"{transaccion.id},{transaccion.productoid},{transaccion.cantidad},{transaccion.tipo},{transaccion.fechatransaccion}";
+        var linea = $"{transaccion.id},{transaccion.productoid},{transaccion.cantidad},{transaccion.tipotransaccion},{transaccion.fechatransaccion}";
         File.AppendAllLines(filePath, new[] { linea });
     }
 
-    public Transaccion? ObtenerPorId(int id)
+    public Transaccion ObtenerPorId(int id)
     {
         var lineas = File.ReadAllLines(filePath);
         var linea = lineas.FirstOrDefault(l => l.StartsWith(id.ToString()));
-        return linea != null ? ConvertirATransaccion(linea) : null;
+        if (linea == null)
+        {
+            throw new KeyNotFoundException($"Producto con ID {id} no encontrado."); 
+        }
+        return ConvertirATransaccion(linea);
     }
 
     public IEnumerable<Transaccion> Listar()
@@ -44,12 +48,12 @@ public class Repositorio_Transaccion
             id = int.Parse(partes[0]),
             productoid = int.Parse(partes[1]),
             cantidad = int.Parse(partes[2]),
-            tipo = (TipoTransaccion)Enum.Parse(typeof(TipoTransaccion), partes[3]),
+            tipotransaccion = (TipoTransaccion)Enum.Parse(typeof(TipoTransaccion), partes[3]),
             fechatransaccion = DateTime.Parse(partes[4])
         };
     }
 
-    private int ObtenerNuevoId()
+    public int ObtenerNuevoId()
     {
         if (!File.Exists(filePath)) return 1;  
         var ultimaLinea = File.ReadAllLines(filePath).LastOrDefault();

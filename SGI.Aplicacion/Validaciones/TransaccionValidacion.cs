@@ -21,7 +21,7 @@ namespace SGI.Aplicacion.Validaciones
             if (producto == null)
             {
                 throw new ValidacionException("El producto no existe.");
-            }else if((producto.stock<=0)&&(transaccion.tipotransaccion == TipoTransaccion.Salida)){
+            }else if((producto.stock-transaccion.cantidad<=0)&&(transaccion.tipotransaccion == TipoTransaccion.Salida)){
                 throw new ValidacionException("El stock es menor a 0");
             }
         }

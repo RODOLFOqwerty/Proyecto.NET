@@ -11,13 +11,14 @@ public class Producto
     public DateTime fechaUM {get;set;}
     public int categoriaId { get; set; }
 
-    public Producto(string Nombre, string Descripcion, float PrecioUnitario, int Stock) {
+    public Producto(string Nombre, string Descripcion, float PrecioUnitario, int Stock,int categoriaId) {
         this.nombre = Nombre;
         this.descripcion = Descripcion;
         this.precioUnitario = PrecioUnitario;
         this.stock = Stock;
         this.fechaC = DateTime.Today;
         this.fechaUM = DateTime.Today;
+        this.categoriaId = categoriaId;
     }
 
 

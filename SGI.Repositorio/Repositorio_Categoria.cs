@@ -10,7 +10,6 @@ public class Repositorio_Categoria : IRepositorio<Categoria>
 
     public void Agregar(Categoria categoria)
     {
-        categoria.id = ObtenerNuevoId();
         var linea = $"{categoria.id},{categoria.nombre},{categoria.descripcion},{categoria.fechaC},{categoria.fechaUM}";
         File.AppendAllLines(filePath, new[] { linea });
     }
@@ -54,7 +53,7 @@ public class Repositorio_Categoria : IRepositorio<Categoria>
         };
     }
 
-    private int ObtenerNuevoId()
+    public int ObtenerNuevoId()
     {
         if (!File.Exists(filePath)) return 1;  // Si no existe el archivo, empieza con ID 1.
         var ultimaLinea = File.ReadAllLines(filePath).LastOrDefault();

@@ -45,3 +45,19 @@ C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version Final\
 C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version Final\SGI\SGI.Repositorio\obj\Debug\net8.0\refint\SGI.Repositorio.dll
 C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.pdb
 C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version Final\SGI\SGI.Repositorio\obj\Debug\net8.0\ref\SGI.Repositorio.dll
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\bin\Debug\net8.0\SGI.Repositorio.deps.json
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\bin\Debug\net8.0\SGI.Repositorio.dll
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\bin\Debug\net8.0\SGI.Repositorio.pdb
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\bin\Debug\net8.0\SGI.Aplicacion.dll
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\bin\Debug\net8.0\SGI.Aplicacion.pdb
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.csproj.AssemblyReference.cache
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.AssemblyInfoInputs.cache
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.AssemblyInfo.cs
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.sourcelink.json
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repo.F3265597.Up2Date
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.dll
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\refint\SGI.Repositorio.dll
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\SGI.Repositorio.pdb
+C:\Users\Fran\OneDrive\Documentos\Facultad\2año\.NET\ProyectoNET\Version_Final\SGI\SGI.Repositorio\obj\Debug\net8.0\ref\SGI.Repositorio.dll

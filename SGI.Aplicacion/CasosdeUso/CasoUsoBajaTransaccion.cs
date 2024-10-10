@@ -1,27 +1,25 @@
 using SGI.Aplicacion.Interfaces;
 using SGI.Aplicacion.Entidades;
+using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
     public class CasoUsoBajaTransaccion
     {
         private readonly IRepositorio<Transaccion> _repositorio;
-        private readonly IServicioAutorizacion _servicioAutorizacion;
+        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
         private readonly IRepositorio<Producto> _repositorioproducto;
+        private readonly IValidacion<Transaccion> _validador = new TransaccionValidacion();
 
-        public CasoUsoBajaTransaccion(IRepositorio<Transaccion> repositorio, IServicioAutorizacion servicioAutorizacion, IRepositorio<Producto> repositoriop)
+        public CasoUsoBajaTransaccion(IRepositorio<Transaccion> repositorio, IRepositorio<Producto> repositoriop)
         {
             _repositorio = repositorio;
-            _servicioAutorizacion = servicioAutorizacion;
             _repositorioproducto = repositoriop;
         }
 
-        public void Ejecutar(int id, int idUsuario)
+        public void Ejecutar(int id, Usuario usuario)
         {
-            if (!_servicioAutorizacion.PoseeElPermiso(idUsuario, Permiso.TransaccionBaja))
-            {
-                throw new PermisosException("El usuario no tiene permisos para dar de baja transacciones.");
-            }
+            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
             Transaccion t = _repositorio.ObtenerPorId(id);
             if(t!=null){
                 Producto p = _repositorioproducto.ObtenerPorId(t.productoid);

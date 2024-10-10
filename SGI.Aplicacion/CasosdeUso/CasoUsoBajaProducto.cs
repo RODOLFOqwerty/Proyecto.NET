@@ -1,5 +1,6 @@
 using SGI.Aplicacion.Interfaces;
 using SGI.Aplicacion.Entidades;
+using System.Collections;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
@@ -8,22 +9,25 @@ namespace SGI.Aplicacion.CasosdeUso
         private readonly IRepositorio<Producto> _repositorio;
 
         private readonly IRepositorio<Transaccion> _repositorioTransaccion;
-        private readonly IServicioAutorizacion _servicioAutorizacion;
+        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
 
-        public CasoUsoBajaProducto(IRepositorio<Producto> repositorio, IServicioAutorizacion servicioAutorizacion, IRepositorio<Transaccion> repositorioT)
+        public CasoUsoBajaProducto(IRepositorio<Producto> repositorio, IRepositorio<Transaccion> repositorioT)
         {
             _repositorio = repositorio;
-            _servicioAutorizacion = servicioAutorizacion;
             _repositorioTransaccion =repositorioT;
         }
 
-        public void Ejecutar(int id,int idproducto, int idUsuario)
+        public void Ejecutar(int id, Usuario usuario)
         {
-            if (!_servicioAutorizacion.PoseeElPermiso(idUsuario, Permiso.ProductoBaja))
-            {
-                throw new PermisosException("El usuario no tiene permisos para dar de baja productos.");
+            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+            
+            foreach(Transaccion t in _repositorioTransaccion.Listar()){
+                if(t.productoid==id){
+                    _repositorioTransaccion.Eliminar(t.id);
+                }
             }
-            _repositorioTransaccion.Eliminar(idproducto);
+
+            
             _repositorio.Eliminar(id);
             
         }

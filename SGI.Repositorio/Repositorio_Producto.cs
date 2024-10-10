@@ -8,10 +8,8 @@ public class Repositorio_Producto : IRepositorio<Producto>
     //private readonly string _filePath = "Producto.txt";
     private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(),"Producto.txt");
     public void Agregar(Producto producto){
-        producto.id = ObtenerNuevoId();
         var linea = $"{producto.id},{producto.nombre},{producto.descripcion},{producto.precioUnitario},{producto.stock},{producto.fechaC},{producto.fechaUM},{producto.categoriaId}";
         File.AppendAllLines(_filePath, new[] { linea });
-        Console.WriteLine(_filePath);
     }
 
 
@@ -58,10 +56,7 @@ public class Repositorio_Producto : IRepositorio<Producto>
             categoriaId = int.Parse(partes[7])
         };
     }
-
-
-
-    private int ObtenerNuevoId()
+        public int ObtenerNuevoId()
     {
         if (!File.Exists(_filePath)) return 1;
         var ultimaLinea = File.ReadAllLines(_filePath).LastOrDefault();
