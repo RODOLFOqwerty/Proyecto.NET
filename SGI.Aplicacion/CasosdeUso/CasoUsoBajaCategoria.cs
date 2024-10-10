@@ -26,8 +26,8 @@ namespace SGI.Aplicacion.CasosdeUso
             if(!lista.Any(p => p.categoriaId == id)){
                 _repositorio.Eliminar(id);
             }else{
-                //throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
-                Console.WriteLine("ERROR");
+                throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
+                //Console.WriteLine("ERROR");
             }
         }
     }

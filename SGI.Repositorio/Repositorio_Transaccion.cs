@@ -6,7 +6,7 @@ namespace SGI;
 
 public class Repositorio_Transaccion:IRepositorio<Transaccion>
 {
-       private readonly string filePath = "transacciones.txt";
+       private readonly string filePath = "Transacciones.txt";
 
     public void Agregar(Transaccion transaccion)
     {
@@ -55,8 +55,11 @@ public class Repositorio_Transaccion:IRepositorio<Transaccion>
 
     public int ObtenerNuevoId()
     {
-        if (!File.Exists(filePath)) return 1;  
-        var ultimaLinea = File.ReadAllLines(filePath).LastOrDefault();
-        return ultimaLinea != null ? int.Parse(ultimaLinea.Split(',')[0]) + 1 : 1;
+        if (!File.Exists(filePath)) return 1;  // Si no existe el archivo, empieza con ID 1.
+        String[] lineas = File.ReadAllLines(filePath);
+        if (lineas.Length==0) return 1;
+        
+        var ids = lineas.Select(lineas => int.Parse(lineas.Split(',')[0])).ToList();
+        return ids.Max()+1;
     }
 }

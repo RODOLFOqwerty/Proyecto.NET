@@ -6,7 +6,7 @@ namespace SGI;
 public class Repositorio_Producto : IRepositorio<Producto>
 {
     //private readonly string _filePath = "Producto.txt";
-    private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(),"Producto.txt");
+    private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(),"Productos.txt");
     public void Agregar(Producto producto){
         var linea = $"{producto.id},{producto.nombre},{producto.descripcion},{producto.precioUnitario},{producto.stock},{producto.fechaC},{producto.fechaUM},{producto.categoriaId}";
         File.AppendAllLines(_filePath, new[] { linea });
@@ -58,8 +58,11 @@ public class Repositorio_Producto : IRepositorio<Producto>
     }
         public int ObtenerNuevoId()
     {
-        if (!File.Exists(_filePath)) return 1;
-        var ultimaLinea = File.ReadAllLines(_filePath).LastOrDefault();
-        return ultimaLinea != null ? int.Parse(ultimaLinea.Split(',')[0]) + 1 : 1;
+        if (!File.Exists(_filePath)) return 1;  // Si no existe el archivo, empieza con ID 1.
+        String[] lineas = File.ReadAllLines(_filePath);
+        if (lineas.Length==0) return 1;
+        
+        var ids = lineas.Select(lineas => int.Parse(lineas.Split(',')[0])).ToList();
+        return ids.Max()+1;
     }
 }
