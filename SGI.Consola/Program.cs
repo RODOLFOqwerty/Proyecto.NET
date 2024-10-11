@@ -15,17 +15,21 @@ namespace SGI.Consola
             string rutaArchivo2 = Path.Combine(Directory.GetCurrentDirectory(), "Categorias.txt");
             string rutaArchivo3 = Path.Combine(Directory.GetCurrentDirectory(), "Transacciones.txt");
             Console.WriteLine(rutaArchivo+"\n"+rutaArchivo2+"\n"+rutaArchivo3);
-            if ((File.Exists(rutaArchivo))||(File.Exists(rutaArchivo2))||(File.Exists(rutaArchivo3)))
+            if ((File.Exists(rutaArchivo)))
             {
                 File.Delete(rutaArchivo);
-                File.Delete(rutaArchivo2);
-                File.Delete(rutaArchivo3);
                 Console.WriteLine("Archivo eliminado.");
             }
-            else
-            {
-                Console.WriteLine("El archivo no existe.");
+            if(File.Exists(rutaArchivo2)){
+                File.Delete(rutaArchivo2);
             }
+            if(File.Exists(rutaArchivo3)){
+                File.Delete(rutaArchivo3);
+            }
+            if(!((File.Exists(rutaArchivo))||(File.Exists(rutaArchivo2))||(File.Exists(rutaArchivo)))){
+                Console.WriteLine("ARCHIVOS NO ENCONTRADOS");
+            }
+            
             
             Pruebas pruebas = new Pruebas();
             string? ent = " ";
@@ -41,7 +45,7 @@ namespace SGI.Consola
             }else if(ent=="5"){
                 pruebas.Prueba5();
             }else{
-                Console.WriteLine("El numero ingresado no es de ninguna Prueba");
+                Console.WriteLine("Lo ingresado no es de ninguna Prueba");
             }
         }
 
@@ -69,14 +73,13 @@ namespace SGI.Consola
             var usuario = new Usuario { Id = 1 };
             usuario.agregarTodosPermisos();
             /*
-                Se da de alta un producto Peperoni(Si el repositorio esta vacio su ID sera 1 caso contrario el id mas alto mas 1)
                 Se da de alta una categoria Pizza(Si el repositorio esta vacio su ID sera 1 caso contrario el id mas alto mas 1)
+                Se da de alta un producto Peperoni(Si el repositorio esta vacio su ID sera 1 caso contrario el id mas alto mas 1)
             */
             casoUsoAltaCategoria.Ejecutar(new Categoria("Pizza","Comida de italia"),usuario);
             casoUsoAltaProducto.Ejecutar(new Producto("Peperoni","Comida con peperoni",10.0f,10,1),usuario);
             Console.WriteLine("1)PRODUCTOS: ");
             Console.WriteLine(pruebas.ImprimirProductos(repositorioProducto));
-            Console.ReadLine();
             //Se da de alta una transaccion de Entrada donde al producto con id 1 se le suma 5 al stock
             casoUsoAltaTransaccion.Ejecutar(new Transaccion(1,5,TipoTransaccion.Entrada),usuario);
             
