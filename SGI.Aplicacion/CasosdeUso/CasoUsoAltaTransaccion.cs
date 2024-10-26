@@ -4,18 +4,8 @@ using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
-    public class CasoUsoAltaTransaccion
+    public class CasoUsoAltaTransaccion(IRepositorio<Transaccion> _repositorio,IRepositorio<Producto> _repositorioProducto, TransaccionValidacion _validador, IServicioAutorizacion _servicioAutorizacion)
     {
-        private readonly IRepositorio<Transaccion> _repositorio;
-        private readonly TransaccionValidacion _validador = new TransaccionValidacion();
-        private readonly IServicioAutorizacion _servicioAutorizacion = new ServicioAutorizacion();
-        private readonly IRepositorio<Producto> _repositorioProducto;
-
-        public CasoUsoAltaTransaccion(IRepositorio<Transaccion> repositorio,IRepositorio<Producto> repositorioProducto)
-        {
-            _repositorio = repositorio;
-            _repositorioProducto = repositorioProducto;
-        }
 
         public void Ejecutar(Transaccion transaccion, Usuario usuario)
         {

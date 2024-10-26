@@ -3,18 +3,9 @@ using SGI.Aplicacion.Interfaces;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
-    public class CasoUsoBajaCategoria
+    public class CasoUsoBajaCategoria(IRepositorio<Categoria> _repositorio, IRepositorio<Producto> _repositorioProducto, IServicioAutorizacion _servicioAutorizacion)
     {
-        private readonly IRepositorio<Categoria> _repositorio;
-        private readonly IRepositorio<Producto> _repositorioProducto;
-        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
-
-        public CasoUsoBajaCategoria(IRepositorio<Categoria> repositorio, IRepositorio<Producto> repositorioP)
-        {
-            _repositorio = repositorio;
-            _repositorioProducto = repositorioP;
-        }
-
+        
         public void Ejecutar(int id, Usuario usuario)
         {
             _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);

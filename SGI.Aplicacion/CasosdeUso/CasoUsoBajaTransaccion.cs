@@ -4,18 +4,8 @@ using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
-    public class CasoUsoBajaTransaccion
+    public class CasoUsoBajaTransaccion(IRepositorio<Transaccion> _repositorio, IRepositorio<Producto> _repositorioproducto, IServicioAutorizacion _servicioAutorizacion, IValidacion<Transaccion> _validador)
     {
-        private readonly IRepositorio<Transaccion> _repositorio;
-        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
-        private readonly IRepositorio<Producto> _repositorioproducto;
-        private readonly IValidacion<Transaccion> _validador = new TransaccionValidacion();
-
-        public CasoUsoBajaTransaccion(IRepositorio<Transaccion> repositorio, IRepositorio<Producto> repositoriop)
-        {
-            _repositorio = repositorio;
-            _repositorioproducto = repositoriop;
-        }
 
         public void Ejecutar(int id, Usuario usuario)
         {
@@ -23,6 +13,7 @@ namespace SGI.Aplicacion.CasosdeUso
             Transaccion t = _repositorio.ObtenerPorId(id);
             if(t!=null){
                 Producto p = _repositorioproducto.ObtenerPorId(t.productoid);
+                _validador.Validar(t);
                 if(p!=null){
                     _repositorioproducto.Eliminar(p.id);
                     if(t.tipotransaccion == TipoTransaccion.Entrada){

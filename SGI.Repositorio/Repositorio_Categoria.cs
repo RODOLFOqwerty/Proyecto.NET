@@ -7,7 +7,7 @@ namespace SGI;
 
 public class Repositorio_Categoria : IRepositorio<Categoria>
 {
-    private readonly string filePath = "Categorias.txt";
+    private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Categorias.txt");
 
     public void Agregar(Categoria categoria)
     {

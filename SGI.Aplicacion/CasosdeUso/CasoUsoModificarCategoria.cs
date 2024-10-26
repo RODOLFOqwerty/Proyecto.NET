@@ -6,16 +6,8 @@ using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso;
 
-public class CasoUsoModificarCategoria
+public class CasoUsoModificarCategoria(IRepositorio<Categoria> _repositorio, IValidacion<Categoria> _validador, IServicioAutorizacion _servicioAutorizacion)
 {
-        private readonly IRepositorio<Categoria> _repositorio;
-        private readonly IValidacion<Categoria> _validador = new CategoriaValidador();
-        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
-
-        public CasoUsoModificarCategoria(IRepositorio<Categoria> repositorioc){
-            _repositorio = repositorioc;
-        }
-
         public void Ejecutar(Categoria c,Usuario usuario){
             _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaModificacion);
             _validador.Validar(c);

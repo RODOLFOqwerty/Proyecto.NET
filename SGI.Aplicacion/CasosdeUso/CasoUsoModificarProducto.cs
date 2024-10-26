@@ -4,17 +4,8 @@ using SGI.Aplicacion.Validaciones;
 
 namespace SGI.Aplicacion.CasosdeUso
 {
-    public class CasoUsoModificarProducto
+    public class CasoUsoModificarProducto(IRepositorio<Producto> _repositorio, IValidacion<Producto> _validador, IServicioAutorizacion _servicioAutorizacion)
     {
-        private readonly IRepositorio<Producto> _repositorio;
-        private readonly IValidacion<Producto> _validador = new ProductoValidacion();
-        private readonly IServicioAutorizacion _servicioAutorizacion= new ServicioAutorizacion();
-
-        public CasoUsoModificarProducto(IRepositorio<Producto> repositorio)
-        {
-            _repositorio = repositorio;
-        }
-
         public void Ejecutar(Producto producto, Usuario usuario)
         {
             _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaModificacion);

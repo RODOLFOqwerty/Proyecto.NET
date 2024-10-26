@@ -6,7 +6,7 @@ namespace SGI;
 
 public class Repositorio_Transaccion:IRepositorio<Transaccion>
 {
-       private readonly string filePath = "Transacciones.txt";
+       private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(),"Transacciones.txt");
 
     public void Agregar(Transaccion transaccion)
     {
