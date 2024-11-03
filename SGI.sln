@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.Repositorio", "SGI.Repo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.Consola", "SGI.Consola\SGI.Consola.csproj", "{C766E80A-6A3C-4E7A-88E2-BC1BAC7E0B41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.UI", "SGI.UI\SGI.UI.csproj", "{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{C766E80A-6A3C-4E7A-88E2-BC1BAC7E0B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C766E80A-6A3C-4E7A-88E2-BC1BAC7E0B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C766E80A-6A3C-4E7A-88E2-BC1BAC7E0B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
