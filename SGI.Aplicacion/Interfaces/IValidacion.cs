@@ -2,5 +2,5 @@ namespace SGI.Aplicacion.Interfaces;
 
 public interface IValidacion<T>
 {
-    void Validar(T entidad);
+    bool Validar(T entidad);
 }

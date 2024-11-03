@@ -10,7 +10,7 @@ namespace SGI.Aplicacion.CasosdeUso
 
     public void Ejecutar(Categoria categoria, Usuario usuario)
     {
-        _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+        _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
 
         categoria.id = _repositorio.ObtenerNuevoId();        
         validador.Validar(categoria); // Validar la categoría antes de agregar

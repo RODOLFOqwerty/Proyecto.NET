@@ -3,5 +3,5 @@ namespace SGI.Aplicacion.Interfaces;
 
  public interface IServicioAutorizacion
  {
-    bool PoseeElPermiso(int IdUsuario, Permiso permiso);
+    bool PoseeElPermiso(Usuario usuario, Permiso permiso);
  }

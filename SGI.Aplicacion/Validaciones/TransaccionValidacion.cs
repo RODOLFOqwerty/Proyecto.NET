@@ -5,24 +5,38 @@ namespace SGI.Aplicacion.Validaciones
 {
     public class TransaccionValidacion : IValidacion<Transaccion>
     {
-        public void Validar(Transaccion transaccion)
+        public bool Validar(Transaccion transaccion)
         {
-            if (transaccion.cantidad <= 0)
-            {
-                throw new ValidacionException("La cantidad debe ser mayor que cero.");
+            try{
+                if (transaccion.cantidad <= 0)
+                {
+                    throw new ValidacionException("La cantidad debe ser mayor que cero.");
+                }
+                return true;
+            }catch(ValidacionException ex){
+                Console.WriteLine($"Error en la validación del producto: {ex.Message}");
+                return false;
+                throw;
             }
 
             // Podes incluir validaciones adicionales por aca
         }
         
-        public void Validar(Transaccion transaccion, Producto producto)
+        public bool Validar(Transaccion transaccion, Producto producto)
         {
  
-            if (producto == null)
-            {
-                throw new ValidacionException("El producto no existe.");
-            }else if((producto.stock-transaccion.cantidad<=0)&&(transaccion.tipotransaccion == TipoTransaccion.Salida)){
-                throw new ValidacionException("El stock es menor a 0");
+            try{
+                if (producto == null)
+                {
+                    throw new ValidacionException("El producto no existe.");
+                }else if((producto.stock-transaccion.cantidad<=0)&&(transaccion.tipotransaccion == TipoTransaccion.Salida)){
+                    throw new ValidacionException("El stock es menor a 0");
+                }
+                return true;
+            }catch(ValidacionException ex){
+                Console.WriteLine($"Error en la validación del producto: {ex.Message}");
+                return false;
+                throw;
             }
         }
     }

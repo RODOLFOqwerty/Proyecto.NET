@@ -1,1 +1,19 @@
-//VERSION 2.0 DEL PROYECTO
+VERSION 2.0 del PROYECTO
+
+Se agregaron:
+    Casos de Uso:
+        -AltaUsuario
+        -BajaUsuario
+        -ModificarUsuario
+    Repositorio:
+        -Usuario(Falta el SQLite)
+
+Se modifico:
+    Servicio Autorizcion
+    Validaciones
+
+Falta:
+    -Agregar la base de datos
+    -Sistema de regitrar e iniciar sesion
+    -Modificar los repositorios
+    -La pagina web
