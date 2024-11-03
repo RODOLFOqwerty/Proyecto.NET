@@ -6,6 +6,5 @@ public interface IRepositorio<T>
     void Eliminar(int id);
     T ObtenerPorId(int id);
     IEnumerable<T> Listar();
-
-    int ObtenerNuevoId();
+    void Modificar(T entidad);
 }

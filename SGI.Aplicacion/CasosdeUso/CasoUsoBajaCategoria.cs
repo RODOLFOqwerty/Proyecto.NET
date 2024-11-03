@@ -8,7 +8,7 @@ namespace SGI.Aplicacion.CasosdeUso
         
         public void Ejecutar(int id, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
            
 
             

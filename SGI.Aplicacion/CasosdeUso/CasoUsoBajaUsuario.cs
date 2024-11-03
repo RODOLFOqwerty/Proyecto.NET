@@ -5,7 +5,8 @@ namespace SGI;
 
 public class CasoUsoBajaUsuario(IRepositorio<Usuario> _repositorio, IServicioAutorizacion _servicioautorizacion)
 {
-    public void Ejecutar(Usuario usuario, Permiso permiso){
-        _servicioautorizacion.PoseeElPermiso(usuario,permiso);
+    public void Ejecutar(Usuario usuario, Usuario usuariobaja){
+        _servicioautorizacion.PoseeElPermiso(usuario,Permiso.UsuarioBaja);
+        _repositorio.Eliminar(usuario.Id);
     }
 }

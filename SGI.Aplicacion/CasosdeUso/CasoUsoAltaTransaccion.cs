@@ -9,8 +9,8 @@ namespace SGI.Aplicacion.CasosdeUso
 
         public void Ejecutar(Transaccion transaccion, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
-            transaccion.id=_repositorio.ObtenerNuevoId();
+            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
+            
             Producto p = _repositorioProducto.ObtenerPorId(transaccion.productoid);
             if(p!=null){
                 if(transaccion.tipotransaccion==TipoTransaccion.Entrada){

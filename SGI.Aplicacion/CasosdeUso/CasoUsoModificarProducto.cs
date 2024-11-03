@@ -8,7 +8,7 @@ namespace SGI.Aplicacion.CasosdeUso
     {
         public void Ejecutar(Producto producto, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaModificacion);
+            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaModificacion);
 
             _validador.Validar(producto);
             _repositorio.Eliminar(producto.id);

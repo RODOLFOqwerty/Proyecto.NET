@@ -6,14 +6,22 @@ Se agregaron:
         -BajaUsuario
         -ModificarUsuario
     Repositorio:
-        -Usuario(Falta el SQLite)
-
+        -Usuario(Con SQLite)
+        -Producto(Con SQLite)
+        -Categoria(Con SQLite)
+        -Trasaccion(Con SQLite)
+        -Modificar(Interfaz)
+    Sistema de Contraseña:
+        -SistemaHashing
+    Excepciones:
+        -RepositoriosExcepcion
 Se modifico:
     Servicio Autorizcion
+    CasoUsoModificarCategoria
     Validaciones
+    Repositorios
 
 Falta:
-    -Agregar la base de datos
-    -Sistema de regitrar e iniciar sesion
-    -Modificar los repositorios
+    -Sistema de iniciar sesion
+    -Modificar casos de uso que usan repositorios
     -La pagina web

@@ -2,10 +2,14 @@ using System;
 namespace SGI.Aplicacion;
 
 public class PermisosException : Exception
-    {
-        public PermisosException(string mensaje) : base(mensaje) { }
-    }
+{
+    public PermisosException(string mensaje) : base(mensaje) { }
+}
 
+public class RepositoriosException : Exception
+{
+    public RepositoriosException(string mensaje) : base(mensaje) {}
+}
 
 public class ValidacionException : Exception
 {

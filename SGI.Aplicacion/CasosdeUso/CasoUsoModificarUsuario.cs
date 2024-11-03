@@ -5,7 +5,7 @@ namespace SGI;
 
 public class CasoUsoModificarUsuario(IRepositorio<Usuario> _repositorio, IServicioAutorizacion _servicioautorizacion)
 {
-    public void Ejecutar(Usuario usuario, Permiso permiso){
-        _servicioautorizacion.PoseeElPermiso(usuario,permiso);
+    public void Ejecutar(Usuario usuario, Usuario usuariomodificar){
+        _servicioautorizacion.PoseeElPermiso(usuario,Permiso.UsuarioModificacion);
     }
 }

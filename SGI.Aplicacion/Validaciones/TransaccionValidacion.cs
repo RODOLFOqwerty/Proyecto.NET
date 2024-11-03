@@ -14,9 +14,8 @@ namespace SGI.Aplicacion.Validaciones
                 }
                 return true;
             }catch(ValidacionException ex){
-                Console.WriteLine($"Error en la validación del producto: {ex.Message}");
+                Console.WriteLine($"Error en la validación de la transaccion: {ex.Message}");
                 return false;
-                throw;
             }
 
             // Podes incluir validaciones adicionales por aca

@@ -8,8 +8,7 @@ namespace SGI.Aplicacion.CasosdeUso
     {
         public void Ejecutar(Producto producto, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
-            producto.id = _repositorio.ObtenerNuevoId();
+            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
             _validador.Validar(producto);
             _repositorio.Agregar(producto);
         }

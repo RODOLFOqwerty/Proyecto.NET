@@ -9,7 +9,7 @@ namespace SGI.Aplicacion.CasosdeUso
        
         public void Ejecutar(int id, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario.Id,Permiso.CategoriaBaja);
+            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
             
             foreach(Transaccion t in _repositorioTransaccion.Listar()){
                 if(t.productoid==id){

@@ -29,7 +29,6 @@ public class ProductoValidacion : IValidacion<Producto>
         {
             Console.WriteLine($"Error en la validación del producto: {ex.Message}");
             return false;
-            throw;
         }
     }
 }
