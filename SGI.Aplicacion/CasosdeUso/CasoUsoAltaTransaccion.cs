@@ -9,28 +9,34 @@ namespace SGI.Aplicacion.CasosdeUso
 
         public void Ejecutar(Transaccion transaccion, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
+           try{
+            if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
             
-            Producto p = _repositorioProducto.ObtenerPorId(transaccion.productoid);
-            if(p!=null){
-                if(transaccion.tipotransaccion==TipoTransaccion.Entrada){
+                Producto p = _repositorioProducto.ObtenerPorId(transaccion.productoid);
+                if(p!=null){
+                    if(transaccion.tipotransaccion==TipoTransaccion.Entrada){
                     _repositorioProducto.Eliminar(transaccion.productoid);
                     p.fechaUM = DateTime.Now;
                     p.stock += transaccion.cantidad;
                     _repositorioProducto.Agregar(p);                   
-                }else{
+                    }else{
                     _validador.Validar(transaccion,p);
                     p.fechaUM = DateTime.Now;
                     p.stock -= transaccion.cantidad;
                     _repositorioProducto.Eliminar(transaccion.productoid);
                     _repositorioProducto.Agregar(p);
-                }
-                _validador.Validar(transaccion);
-                _repositorio.Agregar(transaccion);
+                    }
+                    _validador.Validar(transaccion);
+                    _repositorio.Agregar(transaccion);
+                 }else{
+                    throw new Exception("El producto no existe");
+                } 
             }else{
-                throw new Exception("El producto no existe");
-            }
-            
+                throw new PermisosException("No tiene los permisos");
+            }      
+           }catch(Exception ex){
+            Console.WriteLine($"ERROR EN ALTA TRANSACCION POR {ex}");
+           }
         }
 
     }

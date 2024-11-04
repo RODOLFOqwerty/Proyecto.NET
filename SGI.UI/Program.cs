@@ -24,7 +24,7 @@ CasoUsoUsuarioAlta ua = new CasoUsoUsuarioAlta(repositorio_Usuario, new Servicio
 Usuario adminTotal = new Usuario();
 adminTotal.Permisos.Add(Permiso.UsuarioAlta);
 ua.Ejecutar(adminTotal,usuario);
-
+//
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

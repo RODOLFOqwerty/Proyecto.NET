@@ -10,12 +10,15 @@ namespace SGI.Aplicacion.CasosdeUso
 
     public void Ejecutar(Categoria categoria, Usuario usuario)
     {
-        _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
+        try{
+            if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
+                validador.Validar(categoria); // Validar la categoría antes de agregar
+                _repositorio.Agregar(categoria); // Agregar la categoría al repositorio
+            }
 
-               
-        validador.Validar(categoria); // Validar la categoría antes de agregar
-
-        _repositorio.Agregar(categoria); // Agregar la categoría al repositorio
+        }catch(ValidacionException ex){
+            Console.WriteLine($"ERROR EN ALTA CATEGORIA POR {ex}");
+        }
     }
 
 

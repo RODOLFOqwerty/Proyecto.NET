@@ -39,4 +39,6 @@ public class Repositorio_Transaccion(GestorContext context):IRepositorio<Transac
             context.SaveChanges();
         }
     }
+
+    public void Modificar(Transaccion t){}
 }

@@ -17,11 +17,10 @@ Se agregaron:
         -RepositoriosExcepcion
 Se modifico:
     Servicio Autorizcion
-    CasoUsoModificarCategoria
+    TodosLosCasosDeUso(el try catch)
     Validaciones
     Repositorios
 
 Falta:
     -Sistema de iniciar sesion
-    -Modificar casos de uso que usan repositorios
-    -La pagina web
+    -La pagina web(LOZI)

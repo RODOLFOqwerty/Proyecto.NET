@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.EntityFrameworkCore;
 using SGI.Aplicacion;
 using SGI.Aplicacion.Entidades;
@@ -11,6 +12,21 @@ public class Repositorio_Usuario(GestorContext context) : IRepositorio<Usuario>
     public void Agregar(Usuario usuario){
         context.Usuarios.Add(usuario);
         context.SaveChanges();
+        if(usuario.Id==1){
+            usuario.Permisos.Add(Permiso.AgregarCategoria);
+            usuario.Permisos.Add(Permiso.CategoriaAlta);
+            usuario.Permisos.Add(Permiso.CategoriaBaja);
+            usuario.Permisos.Add(Permiso.CategoriaModificacion);
+            usuario.Permisos.Add(Permiso.ProductoAlta);
+            usuario.Permisos.Add(Permiso.ProductoBaja);
+            usuario.Permisos.Add(Permiso.ProductoModificacion);
+            usuario.Permisos.Add(Permiso.TransaccionAlta);
+            usuario.Permisos.Add(Permiso.TransaccionBaja);
+            usuario.Permisos.Add(Permiso.UsuarioAlta);
+            usuario.Permisos.Add(Permiso.UsuarioBaja);
+            usuario.Permisos.Add(Permiso.UsuarioModificacion);
+            context.SaveChanges();
+        }
     }
 
     public void Eliminar(int id){
@@ -34,5 +50,18 @@ public class Repositorio_Usuario(GestorContext context) : IRepositorio<Usuario>
 
     public IEnumerable<Usuario> Listar(){
         return context.Usuarios.ToList() ?? new List<Usuario>();
+    }
+
+    public void Modificar(Usuario modusuario){
+        Usuario? usuario = ObtenerPorId(modusuario.Id);
+        if(usuario != null){
+            usuario.Nombre = modusuario.Nombre;
+            usuario.Apellido = modusuario.Apellido;
+            usuario.Email = modusuario.Email;
+            modusuario.Contraseña = SistemaHashing.getHash(modusuario.Contraseña ?? " ");
+            usuario.Contraseña = modusuario.Contraseña;
+            usuario.Permisos = modusuario.Permisos;
+            context.SaveChanges();
+        }
     }
 }

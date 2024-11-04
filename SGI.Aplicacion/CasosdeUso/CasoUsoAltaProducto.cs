@@ -8,9 +8,14 @@ namespace SGI.Aplicacion.CasosdeUso
     {
         public void Ejecutar(Producto producto, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
-            _validador.Validar(producto);
-            _repositorio.Agregar(producto);
+            try{
+                if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
+                    _validador.Validar(producto);
+                    _repositorio.Agregar(producto);
+                }
+            }catch(ValidacionException ex){
+                Console.WriteLine($"ERROR EN ALTA PRODUCTO POR {ex}");
+            }
         }
 
     }

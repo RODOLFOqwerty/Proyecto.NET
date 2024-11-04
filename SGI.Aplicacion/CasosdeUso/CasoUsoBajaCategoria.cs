@@ -8,18 +8,22 @@ namespace SGI.Aplicacion.CasosdeUso
         
         public void Ejecutar(int id, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
-           
-
-            
-            // Lógica para verificar si la categoría tiene productos asignados
-            IEnumerable<Producto> lista = _repositorioProducto.Listar();
-            if(!lista.Any(p => p.categoriaId == id)){
-                _repositorio.Eliminar(id);
-            }else{
-                throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
-                //Console.WriteLine("ERROR");
+           try{
+                if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
+                IEnumerable<Producto> lista = _repositorioProducto.Listar();
+                if(!lista.Any(p => p.categoriaId == id)){
+                    _repositorio.Eliminar(id);
+                }else{
+                    throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
+                    //Console.WriteLine("ERROR");
+                }
+                }else{
+                    throw new PermisosException("No pose los permisos");
+                }
+            }catch(Exception ex){
+                Console.WriteLine($"ERROR EN BAJA DE CATEGORIA POR {ex}");
             }
+           
         }
     }
 }

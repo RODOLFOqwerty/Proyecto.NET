@@ -8,11 +8,18 @@ namespace SGI.Aplicacion.CasosdeUso
     {
         public void Ejecutar(Producto producto, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaModificacion);
+            try{
+                if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaModificacion)){
+                    _validador.Validar(producto);
+                    _repositorio.Modificar(producto);
+                }else{
+                    throw new PermisosException("El usuario no tiene los permisos");
+                }
+            }catch(Exception ex){
+                Console.WriteLine($"ERROR EN MODIFICAR PRODUCTO {ex}");
+            }
 
-            _validador.Validar(producto);
-            _repositorio.Eliminar(producto.id);
-            _repositorio.Agregar(producto);
+            
         }
     }
 }

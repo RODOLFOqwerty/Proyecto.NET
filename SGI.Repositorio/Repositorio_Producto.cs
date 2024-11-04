@@ -41,4 +41,16 @@ public class Repositorio_Producto(GestorContext context): IRepositorio<Producto>
         }
     }
 
+    public void Modificar(Producto modproducto){
+        Producto? producto = ObtenerPorId(modproducto.id);
+        if(producto != null){
+            producto.categoriaId = modproducto.categoriaId;
+            producto.descripcion = modproducto.descripcion;
+            producto.nombre = modproducto.nombre;
+            producto.precioUnitario = modproducto.precioUnitario;
+            producto.fechaUM = modproducto.fechaUM;
+            context.SaveChanges();
+        }
+    }
+
 }

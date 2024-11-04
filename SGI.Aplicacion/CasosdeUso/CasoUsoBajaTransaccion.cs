@@ -9,7 +9,8 @@ namespace SGI.Aplicacion.CasosdeUso
 
         public void Ejecutar(int id, Usuario usuario)
         {
-            _servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja);
+            try{
+                if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
             Transaccion t = _repositorio.ObtenerPorId(id);
             if(t!=null){
                 Producto p = _repositorioproducto.ObtenerPorId(t.productoid);
@@ -27,6 +28,10 @@ namespace SGI.Aplicacion.CasosdeUso
                     }
                 }
                 _repositorio.Eliminar(id);
+            }
+            }
+            }catch(Exception ex){
+                Console.WriteLine($"ERROR EN BAJA DE TRASNSACCION POR {ex}");
             }
 
             
