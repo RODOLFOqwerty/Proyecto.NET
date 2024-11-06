@@ -1,3 +1,4 @@
+using SGI.Aplicacion;
 using SGI.Aplicacion.Entidades;
 using SGI.Aplicacion.Interfaces;
 using SGI.Repositorio;
@@ -53,4 +54,9 @@ public class Repositorio_Producto(GestorContext context): IRepositorio<Producto>
         }
     }
 
+    public Producto BuscarPorAtributo(string id){
+        return context.Productos.First(p => p.categoriaId == Int32.Parse(id)) ?? throw new RepositoriosException("El producto no se encuentra");
+    }
+
+   
 }

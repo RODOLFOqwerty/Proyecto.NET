@@ -41,4 +41,10 @@ public class Repositorio_Transaccion(GestorContext context):IRepositorio<Transac
     }
 
     public void Modificar(Transaccion t){}
+
+    public Transaccion BuscarPorAtributo(string atributo)
+    {
+        return context.Transacciones.First(t => t.productoid == Int32.Parse(atributo))??throw new RepositoriosException("La transaccion no fue encontrada");
+    }
+
 }

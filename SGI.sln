@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.Aplicacion", "SGI.Aplic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.Repositorio", "SGI.Repositorio\SGI.Repositorio.csproj", "{61F71318-9328-4519-9C74-36ACCFA26EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.Consola", "SGI.Consola\SGI.Consola.csproj", "{C766E80A-6A3C-4E7A-88E2-BC1BAC7E0B41}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGI.UI", "SGI.UI\SGI.UI.csproj", "{2DB48C05-8A96-4D56-AEC6-AFAEDC279CF3}"
 EndProject
 Global

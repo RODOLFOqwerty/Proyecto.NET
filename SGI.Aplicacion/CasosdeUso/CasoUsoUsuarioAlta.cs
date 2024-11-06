@@ -6,15 +6,12 @@ namespace SGI.Aplicacion.CasosdeUso;
 public class CasoUsoUsuarioAlta(IRepositorio<Usuario> _repositorio, IServicioAutorizacion _servicioAutorizacion, IValidacion<Usuario> _validador)
 {
     public void Ejecutar(Usuario actusuario, Usuario otrousuario){
-        _servicioAutorizacion.PoseeElPermiso(actusuario,Permiso.UsuarioAlta);
-        try{
+        if(_servicioAutorizacion.PoseeElPermiso(actusuario,Permiso.UsuarioAlta)){
             _validador.Validar(otrousuario);
-            otrousuario.Contraseña = SistemaHashing.getHash(otrousuario.Contraseña ?? "000");
+            otrousuario.Contraseña = SistemaHashing.getHash(otrousuario.Contraseña);
             _repositorio.Agregar(otrousuario);
-        }catch(RepositoriosException rex){
-            Console.WriteLine($"ERROR EN ALTA USUARIO POR {rex}");
-        }catch(ValidacionException vex){
-            Console.WriteLine($"ERROR EN ALTA USUARIO POR {vex}");
+        }else{
+            throw new PermisosException("No pose los permisos adecuados");
         }
     }
 }

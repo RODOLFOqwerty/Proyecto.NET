@@ -52,4 +52,13 @@ public class Repositorio_Categoria(GestorContext context) : IRepositorio<Categor
         }
     }
 
+    public void EliminarEntAso(){
+
+    }
+
+    public Categoria BuscarPorAtributo(string nombre){
+        return context.Categorias.First(c => c.nombre == nombre) ?? throw new RepositoriosException($"No se encontro a la categoria con nombre {nombre}");
+    }
+
+    
 }

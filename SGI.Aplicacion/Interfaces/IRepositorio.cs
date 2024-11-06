@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace SGI.Aplicacion.Interfaces;
 
 public interface IRepositorio<T>
@@ -7,4 +9,5 @@ public interface IRepositorio<T>
     T ObtenerPorId(int id);
     IEnumerable<T> Listar();
     void Modificar(T entidad);
+    T BuscarPorAtributo(string atributo);
 }

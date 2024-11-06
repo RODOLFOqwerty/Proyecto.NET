@@ -24,6 +24,13 @@ CasoUsoUsuarioAlta ua = new CasoUsoUsuarioAlta(repositorio_Usuario, new Servicio
 Usuario adminTotal = new Usuario();
 adminTotal.Permisos.Add(Permiso.UsuarioAlta);
 ua.Ejecutar(adminTotal,usuario);
+
+usuario.Nombre = Console.ReadLine() ?? "";
+usuario.Apellido = Console.ReadLine() ?? "";
+usuario.Email = Console.ReadLine() ?? "";
+usuario.Contraseña = Console.ReadLine() ?? "";
+
+ua.Ejecutar(adminTotal,usuario);
 //
 var builder = WebApplication.CreateBuilder(args);
 

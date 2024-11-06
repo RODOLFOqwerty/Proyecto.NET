@@ -2,7 +2,7 @@ VERSION 2.0 del PROYECTO
 
 Se agregaron:
     Casos de Uso:
-        -AltaUsuario
+        -AltaUsuario(Se verifica que no haya 2 emails iguales)
         -BajaUsuario
         -ModificarUsuario
     Repositorio:
@@ -20,7 +20,10 @@ Se modifico:
     TodosLosCasosDeUso(el try catch)
     Validaciones
     Repositorios
+    el CUBajaCategoria
+    try catch de CU
 
 Falta:
-    -Sistema de iniciar sesion
+    -Sistema de iniciar sesion//esta a medias
     -La pagina web(LOZI)
+    -Sacar las pruebas del program

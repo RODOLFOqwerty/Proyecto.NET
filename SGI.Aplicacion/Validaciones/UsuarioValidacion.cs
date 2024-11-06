@@ -7,7 +7,6 @@ namespace SGI;
 public class UsuarioValidacion : IValidacion<Usuario>
 {
     public bool Validar(Usuario usuario){
-        try{
             if(string.IsNullOrWhiteSpace(usuario.Nombre)){
                 throw new ValidacionException("En el nombre no pueden haber espacios en blanco");
             }
@@ -21,9 +20,6 @@ public class UsuarioValidacion : IValidacion<Usuario>
 
             }
             return true;
-        }catch(ValidacionException ex){
-            Console.WriteLine($"Error en la validación del usuario: {ex.Message}");
-            return false;
-        }
+        
     }
 }

@@ -10,22 +10,26 @@ namespace SGI;
 public class Repositorio_Usuario(GestorContext context) : IRepositorio<Usuario> 
 {
     public void Agregar(Usuario usuario){
-        context.Usuarios.Add(usuario);
-        context.SaveChanges();
-        if(usuario.Id==1){
-            usuario.Permisos.Add(Permiso.AgregarCategoria);
-            usuario.Permisos.Add(Permiso.CategoriaAlta);
-            usuario.Permisos.Add(Permiso.CategoriaBaja);
-            usuario.Permisos.Add(Permiso.CategoriaModificacion);
-            usuario.Permisos.Add(Permiso.ProductoAlta);
-            usuario.Permisos.Add(Permiso.ProductoBaja);
-            usuario.Permisos.Add(Permiso.ProductoModificacion);
-            usuario.Permisos.Add(Permiso.TransaccionAlta);
-            usuario.Permisos.Add(Permiso.TransaccionBaja);
-            usuario.Permisos.Add(Permiso.UsuarioAlta);
-            usuario.Permisos.Add(Permiso.UsuarioBaja);
-            usuario.Permisos.Add(Permiso.UsuarioModificacion);
+        if(!context.Usuarios.Any(u => u.Email == usuario.Email)){
+            context.Usuarios.Add(usuario);
             context.SaveChanges();
+            if(usuario.Id==1){
+                usuario.Permisos.Add(Permiso.AgregarCategoria);
+                usuario.Permisos.Add(Permiso.CategoriaAlta);
+                usuario.Permisos.Add(Permiso.CategoriaBaja);
+                usuario.Permisos.Add(Permiso.CategoriaModificacion);
+                usuario.Permisos.Add(Permiso.ProductoAlta);
+                usuario.Permisos.Add(Permiso.ProductoBaja);
+                usuario.Permisos.Add(Permiso.ProductoModificacion);
+                usuario.Permisos.Add(Permiso.TransaccionAlta);
+                usuario.Permisos.Add(Permiso.TransaccionBaja);
+                usuario.Permisos.Add(Permiso.UsuarioAlta);
+                usuario.Permisos.Add(Permiso.UsuarioBaja);
+                usuario.Permisos.Add(Permiso.UsuarioModificacion);
+                context.SaveChanges();
+            }
+        }else{
+            throw new RepositoriosException("Existe un usuario con ese Email");
         }
     }
 
@@ -64,4 +68,10 @@ public class Repositorio_Usuario(GestorContext context) : IRepositorio<Usuario>
             context.SaveChanges();
         }
     }
+
+    public Usuario BuscarPorAtributo(string Email){
+        return context.Usuarios.FirstOrDefault(u => u.Email == Email) ?? throw new RepositoriosException($"El usuario con email {Email} no fue encontrado");
+    }
+
+    public void EliminarEntAso(){}
 }

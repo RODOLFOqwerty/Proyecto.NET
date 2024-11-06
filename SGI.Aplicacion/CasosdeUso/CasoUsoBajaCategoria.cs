@@ -8,22 +8,15 @@ namespace SGI.Aplicacion.CasosdeUso
         
         public void Ejecutar(int id, Usuario usuario)
         {
-           try{
-                if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
-                IEnumerable<Producto> lista = _repositorioProducto.Listar();
-                if(!lista.Any(p => p.categoriaId == id)){
+            if(_servicioAutorizacion.PoseeElPermiso(usuario,Permiso.CategoriaBaja)){
+                if(_repositorioProducto.BuscarPorAtributo(id.ToString()) != null){
                     _repositorio.Eliminar(id);
                 }else{
-                    throw new ValidacionException("HAY PRODUCTOS ASIGNADOS A ESA CATEGORIA");
-                    //Console.WriteLine("ERROR");
+                    throw new ValidacionException("Hay productos asignados");
                 }
-                }else{
-                    throw new PermisosException("No pose los permisos");
-                }
-            }catch(Exception ex){
-                Console.WriteLine($"ERROR EN BAJA DE CATEGORIA POR {ex}");
+            }else{
+                throw new PermisosException("No pose los permisos");
             }
-           
         }
     }
 }

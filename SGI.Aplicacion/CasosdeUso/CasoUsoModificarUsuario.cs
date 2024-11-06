@@ -9,7 +9,7 @@ public class CasoUsoModificarUsuario(IRepositorio<Usuario> _repositorio, IValida
     public void Ejecutar(Usuario usuario, Usuario usuariomodificar){
         try{
             if(_servicioautorizacion.PoseeElPermiso(usuario,Permiso.UsuarioModificacion)){
-                _validador.Validar(usuario);
+                _validador.Validar(usuariomodificar);
                 _repositorio.Modificar(usuariomodificar);
             }
         }catch(Exception ex){
